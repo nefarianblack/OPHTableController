@@ -49,7 +49,7 @@
 }
 
 - (void)removeScrollViewObserver {
-    if ([[self.scrollView observationInfo]])
+    if ([self.scrollView observationInfo])
         [self.scrollView removeObserver:self forKeyPath:@"contentOffset"];
 }
 
