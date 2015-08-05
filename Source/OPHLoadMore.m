@@ -49,7 +49,8 @@
 }
 
 - (void)removeScrollViewObserver {
-    [self.scrollView removeObserver:self forKeyPath:@"contentOffset"];
+    if ([[self.scrollView observationInfo]])
+        [self.scrollView removeObserver:self forKeyPath:@"contentOffset"];
 }
 
 - (void)addDefaultLoadMore {
